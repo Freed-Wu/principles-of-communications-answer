@@ -1,0 +1,49 @@
+\documentclass[tikz]{standalone}
+\usepackage{physics}
+\usepackage{newtxmath}
+
+\begin{document}
+
+\tikzstyle{Integrator} = [draw, fill=blue!20, rectangle, minimum height=3em, minimum width=4em]
+\tikzstyle{Judger} = [draw, fill=red!20, rectangle, minimum height=3em, minimum width=4em]
+\tikzstyle{Input} = []
+\tikzstyle{Output} = []
+\tikzstyle{Branch} = [coordinate]
+\tikzstyle{Multipler} = [
+	draw,
+	circle,
+	path picture = {%
+		\draw[black]
+		(path picture bounding box.south east) -- (path picture bounding box.north west)
+		(path picture bounding box.south west) -- (path picture bounding box.north east);
+	}
+]
+
+\begin{tikzpicture}[auto, >=latex, node distance = 2cm]
+	\node(input) [Input] {$r(t)$};
+	\node(branch1) [Branch, right of = input] {};
+	\node(multipler1) [Multipler, above right of = branch1] {};
+	\node(input1) [Input, below of = multipler1] {$s_1(t)$};
+	\node(integrator1) [Integrator, right of = multipler1] {$\int \dd t$};
+	\node(judger) [Judger, below right of = integrator1]
+	{$\mathop{\gtrless}\limits_{H_0}^{H_1}$};
+	\node(output) [Output, right of = judger] {$s(t)$};
+	\node(multipler0) [Multipler, below right of = branch1] {};
+	\node(input0) [Input, below of = multipler0] {$s_0(t)$};
+	\node(integrator0) [Integrator, right of = multipler0] {$\int \dd t$};
+	\node(input_t) [Input, left of = judger] {$t = T$};
+	\draw(input) -- (branch1);
+	\draw(branch1) |- (multipler1) [->];
+	\draw(input1) -- (multipler1) [->];
+	\draw(multipler1) -- (integrator1) [->];
+	\draw(integrator1) -| (judger) [->];
+	\draw(judger) -- (output)[->];
+	\draw(branch1) |- (multipler0)[->];
+	\draw(multipler0) -- (integrator0)[->];
+	\draw(input0) -- (multipler0)[->];
+	\draw(integrator0) -| (judger)[->];
+	\draw(input_t) -- (judger)[->];
+\end{tikzpicture}
+
+\end{document}
+

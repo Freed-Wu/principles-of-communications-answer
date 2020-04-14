@@ -1,0 +1,4 @@
+,$T_0 = T_B$,$T_0 = 2T_B$
+Best sampling decision time,$\frac{T_0}{2}$,$\frac{T_0}{4}\&\frac{3T_0}{4}$
+Decision threshold level,0,0
+Noise tolerance,1,1
