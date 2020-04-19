@@ -3,15 +3,15 @@ A backup of my homework.
 
 ## Usage ##
 
-Browse: use any your favourite markdown browser. Such as
-[markdown-preview](https://github.com/iamcco/markdown-preview.nvim) which I
-used.
+1. Markdown browser. Such as
+   [markdown-preview](https://github.com/iamcco/markdown-preview.nvim).
 
-Compile: use any your favourite markdown compiler. Such as
-[pandoc](https://github.com/jgm/pandoc) which I used.
+## Compile ##
 
-Some pictures need latex compiler. Such as
-[texlive](https://github.com/TeX-Live/texlive-source) which I used.
+1. Markdown converter Such as [pandoc](https://github.com/jgm/pandoc).
+2. A LaTex distribution. Such as
+   [texlive](https://github.com/TeX-Live/texlive-source). Some pictures need
+   LaTex to compile.
 
 ## Thanks ##
 
